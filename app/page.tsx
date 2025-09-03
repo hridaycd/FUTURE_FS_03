@@ -2,24 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Search, ShoppingCart, User, Heart, Menu, X, Star, Truck, Shield, Clock } from 'lucide-react';
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import FeaturedProducts from '@/components/FeaturedProducts';
 import Categories from '@/components/Categories';
 import Deals from '@/components/Deals';
 import Newsletter from '@/components/Newsletter';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
+    const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -41,15 +34,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      <main>
-        <Hero />
-        <Categories />
-        <FeaturedProducts />
-        <Deals />
-        <Newsletter />
-      </main>
-      <Footer />
+      <Hero />
+      <Categories />
+      <FeaturedProducts />
+      <Deals />
+      <Newsletter />
     </div>
   );
 }
+
